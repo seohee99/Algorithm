@@ -50,4 +50,5 @@ for _ in range(W):
     graph[a].append([b, 0])
     graph[b].append([a, 0])
 
-print(Dijkstra(1))
+ans =Dijkstra(1)
+print(ans)
