@@ -4,28 +4,18 @@ input = sys.stdin.readline
 
 N = int(input())
 arr = []
+dp = [1] * N
 
-# 3 7 5 2 6 1 4
 # 입력 초기화
-for _ in range(N):
+for i in range(N):
     arr.append(int(input()))
 
-idx = 1
-count = 0
-for i in range(N-1, N//2, -1):
-    print("i",arr[i])
-    if arr[i] == idx:
-        arr.remove(idx)
-        arr.insert(idx-1, idx)
-        count += 1
+# LIS, 최장 증가 수열
+for i in range(N):
+    for j in range(i):
+        if arr[j] < arr[i]:
+            dp[i] = max(dp[i], dp[j] + 1)
 
-# 마지막 아이 줄 세우기        
-for i in arr:
-    if i == N+1:
-        if arr[N+1] != i:
-            arr.remove(i)
-            arr.append(i)
-            count += 1
+print(N - max(dp))
 
-print(arr)
-print(count)
+
