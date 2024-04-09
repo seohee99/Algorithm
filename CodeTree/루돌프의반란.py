@@ -82,7 +82,12 @@ def get_santa_move(Sr, Sc, Rr, Rc):
     new_santa = sorted(santa_move_list.items())[0][1]
     return new_santa
 
-# 재귀?
+def rufolf_conflict(Rr, Rc, santa_dict):
+    return
+
+def santa_conflict(Sr, Sc, santa_dict):
+    return
+
 # 이 함수를 분리해야겠군... 루돌프 / 산타로
 def conflict(r, c, idx, dr, dc):
 
